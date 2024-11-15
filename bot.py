@@ -96,7 +96,7 @@ async def start():
     app = web.AppRunner(await web_server())
     await StreamBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
     await app.setup()
-    bind_address = "0.0.0.0"
+    bind_address = "145.223.20.182"
     await web.TCPSite(app, bind_address, PORT).start()
     if CLONE_MODE == True:
         await restart_bots()
